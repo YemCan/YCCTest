@@ -178,8 +178,6 @@
 
 
 /* Language Buttons BELOW Menu - ADD THIS */
-
-/*
 .language-menu-buttons {
     display: flex;
     justify-content: center;
@@ -209,7 +207,7 @@
     min-width: 130px;
     justify-content: center;
 }
-*/
+
 .language-menu-buttons .lang-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(44, 90, 160, 0.3);
@@ -240,88 +238,9 @@
     .language-menu-buttons .lang-btn {
         width: 100%;
     }
-
-
-
-
-
-
-
-
-    /* Make language buttons match Arabic version */
-/* === LANGUAGE BUTTONS - EXACT ARABIC MATCH === */
-.language-row {
-    margin-top: 15px !important;
-    padding-top: 15px !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
-    width: 100% !important;
-    text-align: center !important;
-    box-sizing: border-box !important;
 }
-
-.language-container {
-    display: inline-flex !important;
-    gap: 15px !important;
-    justify-content: center !important;
-    align-items: center !important;
-    box-sizing: border-box !important;
-}
-
-/* EXACT Arabic button copy */
-.lang-switch-btn {
-    padding: 6px 12px !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    background: rgba(0, 0, 0, 0.2) !important;
-    color: white !important;
-    border-radius: 4px !important;
-    font-size: 14px !important;
-    font-weight: 500 !important;
-    cursor: pointer !important;
-    transition: all 0.3s ease !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 5px !important;
-    min-width: 60px !important;
-    min-height: 35px !important;
-    box-sizing: border-box !important;
-    font-family: 'Tajawal', sans-serif !important;
-    line-height: 1 !important;
-    text-decoration: none !important;
-}
-
-.lang-switch-btn:hover {
-    background: rgba(0, 0, 0, 0.4) !important;
-    border-color: rgba(255, 255, 255, 0.6) !important;
-    transform: translateY(-1px) !important;
-}
-
-.lang-switch-btn.active {
-    background: rgba(255, 255, 255, 0.2) !important;
-    border-color: rgba(255, 255, 255, 0.8) !important;
-    font-weight: 600 !important;
-}
-
-.lang-icon {
-    font-weight: bold !important;
-    font-size: 14px !important;
-    display: inline !important;
-}
-
-/* Remove all other language styles */
-.language-menu-buttons,
-.language-buttons,
-[class*="language-"]:not(.language-row):not(.language-container):not(.lang-switch-btn):not(.lang-icon) {
-    display: none !important;
-}
-}
-
 
 </style>
-
-
-
-
 
 <!-- IN THE BODY SECTION, ADD THIS BEFORE </body>: -->
 <div class="language-buttons">
@@ -347,6 +266,7 @@
 
 
 
+
 <!-- Header -->
 <header class="main-header">
     <div class="header-container">
@@ -359,47 +279,47 @@
             </div>
         </div>
 
-        <!-- Menu Row -->
-        <div class="header-row">
-            <nav class="main-nav">
-                <a href="#about"><i class="fas fa-info-circle"></i> About</a>
-                <a href="#canada-yemen"><i class="fas fa-handshake"></i> Canada-Yemen</a>
-                <a href="#news"><i class="fas fa-newspaper"></i> News</a>
-                <a href="#resources"><i class="fas fa-life-ring"></i> Resources</a>
-                <a href="#events"><i class="fas fa-calendar-alt"></i> Events</a>
-                <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-            </nav>
-            
-            <div class="header-actions">
-                <button class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+        <!-- LANGUAGE SWITCHER ADDED HERE -->
+        <div class="language-switcher-header">
+            <button class="lang-switch-btn active" data-lang="en" onclick="switchLanguage('en')">
+                <i class="fas fa-globe-americas"></i> En
+            </button>
+            <button class="lang-switch-btn" data-lang="ar" onclick="switchLanguage('ar')">
+                <i class="fas fa-mosque"></i> ع
+            </button>
         </div>
 
-        <!-- Language Row - SIMPLE VERSION LIKE ARABIC -->
-        <div class="language-row">
-    <div class="language-container">
-        <button class="lang-switch-btn active" 
-                data-lang="en"
-                onclick="window.location.href='index.html'; localStorage.setItem('preferredLang', 'en');">
-            <span class="lang-icon">EN</span>
-        </button>
-        <button class="lang-switch-btn" 
-                data-lang="ar"
-                onclick="window.location.href='../Arabic/index.html'; localStorage.setItem('preferredLang', 'ar');">
-            <span class="lang-icon">AR</span>
-        </button>
-    </div>
-</div>
-
+        <nav class="main-nav">
+            <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+            <a href="#canada-yemen"><i class="fas fa-handshake"></i> Canada-Yemen</a>
+            <a href="#news"><i class="fas fa-newspaper"></i> News</a>
+            <a href="#resources"><i class="fas fa-life-ring"></i> Resources</a>
+            <a href="#events"><i class="fas fa-calendar-alt"></i> Events</a>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+        
+        <div class="header-actions">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
     </div>
 </header>
 
-
+<!-- ADD THIS RIGHT AFTER THE HEADER CLOSING TAG -->
+<div class="language-menu-buttons">
+    <button class="lang-btn active" onclick="window.location.href='index.html'; localStorage.setItem('preferredLang', 'en');">
+        <span class="lang-icon">EN</span>
+        <span>English Version</span>
+    </button>
+    <button class="lang-btn" onclick="window.location.href='../Arabic/index.html'; localStorage.setItem('preferredLang', 'ar');">
+        <span class="lang-icon">AR</span>
+        <span>النسخة العربية</span>
+    </button>
+</div>
 
 <!-- Your existing content continues below... -->
-
+ 
 
     <!-- Welcome Marquee -->
     <div class="welcome-bar">
@@ -1378,45 +1298,90 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 <script>
-    // Remove the entire switchLanguage function if you're using onclick
-    // Keep only setActiveLanguageButton:
-    
-    function setActiveLanguageButton() {
-        const isArabic = window.location.href.includes('/Arabic/');
-        const buttons = document.querySelectorAll('.lang-switch-btn');
+    // Language switching function
+    function switchLanguage(lang) {
+        console.log('Switching to:', lang);
         
-        buttons.forEach(btn => {
-            const lang = btn.getAttribute('data-lang');
-            if (lang) {
-                if ((lang === 'ar' && isArabic) || (lang === 'en' && !isArabic)) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
+        // Save preference
+        localStorage.setItem('preferredLang', lang);
+        
+        // Get current page
+        let currentPath = window.location.pathname;
+        let pathParts = currentPath.split('/');
+        let currentPage = pathParts.pop();
+        
+        if (!currentPage || currentPage === '') {
+            currentPage = 'index.html';
+        }
+        
+        console.log('Current page:', currentPage);
+        console.log('Current path:', currentPath);
+        
+        // Determine target URL
+        let targetUrl = '';
+        const isInEnglishFolder = currentPath.includes('/English/');
+        const isInArabicFolder = currentPath.includes('/Arabic/');
+        
+        if (lang === 'en') {
+            // Switch to English
+            if (isInArabicFolder) {
+                // From Arabic to English
+                targetUrl = '../English/' + (currentPage === 'index.html' ? 'index.html' : currentPage);
+            } else if (isInEnglishFolder) {
+                // Already in English folder
+                targetUrl = currentPage;
+            } else {
+                // From root to English
+                targetUrl = 'English/' + (currentPage === 'index.html' ? 'index.html' : currentPage);
             }
-        });
+        } else if (lang === 'ar') {
+            // Switch to Arabic
+            if (isInEnglishFolder) {
+                // From English to Arabic
+                targetUrl = '../Arabic/' + (currentPage === 'index.html' ? 'index.html' : currentPage);
+            } else if (isInArabicFolder) {
+                // Already in Arabic folder
+                targetUrl = currentPage;
+            } else {
+                // From root to Arabic
+                targetUrl = 'Arabic/' + (currentPage === 'index.html' ? 'index.html' : currentPage);
+            }
+        }
+        
+        console.log('Target URL:', targetUrl);
+        
+        // Redirect if URL is different
+        if (targetUrl && !window.location.href.endsWith(targetUrl)) {
+            window.location.href = targetUrl;
+        } else {
+            console.log('Already on the correct page or invalid target');
+        }
     }
 
+    // Set active button based on current language
+    function setActiveLanguageButton() {
+        const isArabic = document.documentElement.lang === 'ar' || 
+                         window.location.href.includes('/Arabic/');
+        
+        const arabicBtn = document.querySelector('.lang-switch-btn[data-lang="ar"]');
+        const englishBtn = document.querySelector('.lang-switch-btn[data-lang="en"]');
+        
+        if (arabicBtn && englishBtn) {
+            if (isArabic) {
+                arabicBtn.classList.add('active');
+                englishBtn.classList.remove('active');
+            } else {
+                englishBtn.classList.add('active');
+                arabicBtn.classList.remove('active');
+            }
+        }
+    }
+
+    // Initialize on page load
     document.addEventListener('DOMContentLoaded', function() {
         setActiveLanguageButton();
     });
 </script>
-
-
-<script>
-// Force button sizes to match
-setTimeout(function() {
-    var buttons = document.querySelectorAll('.lang-switch-btn');
-    for(var i = 0; i < buttons.length; i++) {
-        buttons[i].style.padding = '6px 12px';
-        buttons[i].style.minWidth = '60px';
-        buttons[i].style.minHeight = '35px';
-        buttons[i].style.fontSize = '14px';
-    }
-}, 500);
-</script>
-
-
 
 
     </body>
