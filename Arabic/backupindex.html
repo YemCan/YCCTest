@@ -197,15 +197,12 @@
         </div>
     </div>
 
-    
-
-
-<!-- Header -->
-<header class="main-header">
+    <!-- Header (EXACTLY LIKE ENGLISH VERSION - KEPT LTR) -->
+   <header class="main-header">
     <div class="header-container">
-        <!-- Logo and titles remain the same -->
         <div class="logo-section">
-            <img src="logo2.png" alt="YCC Logo" class="header-logo">
+            <img src="logo2.png" alt="YCC Logo" class="header-logo" style="display: block !important; width: auto !important; height: 50px !important;">
+
             <div class="header-titles">
                 <h1>Yemeni Canadian Council <span>(YCC)</span></h1>
                 <p class="arabic-title">المجلس اليمني الكندي</p>
@@ -213,41 +210,32 @@
             </div>
         </div>
 
-        <!-- Menu Row -->
-        <div class="header-row">
-            <nav class="main-nav">
-                <a href="#about"><i class="fas fa-info-circle"></i> About</a>
-                <a href="#canada-yemen"><i class="fas fa-handshake"></i> Canada-Yemen</a>
-                <a href="#news"><i class="fas fa-newspaper"></i> News</a>
-                <a href="#resources"><i class="fas fa-life-ring"></i> Resources</a>
-                <a href="#events"><i class="fas fa-calendar-alt"></i> Events</a>
-                <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-            </nav>
-            
-            <div class="header-actions">
-                <button class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+        <!-- LANGUAGE SWITCHER ADDED HERE -->
+        <div class="language-switcher-header">
+            <button class="lang-switch-btn" data-lang="en" onclick="switchLanguage('en')">
+                <i class="fas fa-globe-americas"></i> English
+            </button>
+            <button class="lang-switch-btn active" data-lang="ar" onclick="switchLanguage('ar')">
+                <i class="fas fa-mosque"></i> العربية
+            </button>
         </div>
 
-        <!-- NEW: Language Row Below Menu -->
-        <div class="language-row">
-            <div class="language-container">
-                <button class="lang-btn active" onclick="window.location.href='index.html'; localStorage.setItem('preferredLang', 'ar');">
-                    <span class="lang-icon">AR</span>
-                </button>
-                <button class="lang-btn" onclick="window.location.href='../English/index.html'; localStorage.setItem('preferredLang', 'en');">
-                    <span class="lang-icon">En</span>
-                </button>
-            </div>
+        <nav class="main-nav">
+            <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+            <a href="#canada-yemen"><i class="fas fa-handshake"></i> Canada-Yemen</a>
+            <a href="#news"><i class="fas fa-newspaper"></i> News</a>
+            <a href="#resources"><i class="fas fa-life-ring"></i> Resources</a>
+            <a href="#events"><i class="fas fa-calendar-alt"></i> Events</a>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+        
+        <div class="header-actions">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </div>
 </header>
-
-
-
-
 
     <!-- Welcome Marquee -->
     <div class="welcome-bar">
