@@ -287,26 +287,25 @@
 
 
 <!-- Language Switcher - UNIFIED VERSION -->
+<!-- Language Switcher - QUICK FIX -->
 <div class="language-row">
     <div class="language-container">
-        <!-- Arabic Button -->
-        <button class="lang-switch-btn" 
-                onclick="switchLanguage('ar')"
-                data-lang="ar">
+        <!-- Arabic Button - Direct link -->
+        <a href="../Arabic/index.html" class="lang-switch-btn" data-lang="ar">
             <span class="lang-icon">AR</span>
             <span class="lang-text">العربية</span>
-        </button>
+        </a>
         
-        <!-- English Button -->
-        <button class="lang-switch-btn" 
-                onclick="switchLanguage('en')"
-                data-lang="en">
+        <!-- English Button - Direct link to root -->
+        <a href="../index.html" class="lang-switch-btn active" data-lang="en">
             <span class="lang-icon">EN</span>
             <span class="lang-text">English</span>
-        </button>
+        </a>
     </div>
 </div>
-    </div>
+
+
+
 </header>
 
 
@@ -1163,10 +1162,18 @@
             </div>
         </div>
         
-        <div class="footer-bottom">
-            <p>&copy; 2025 Yemeni Canadian Council (YCC). All rights reserved.</p>
-            <p>Published: November 30, 2025 | Last Updated: <span id="currentDate"></span></p>
-            <p>Designed, Developed, and Managed By: Omar Sabri</p>
+        
+        
+        
+        
+        
+        
+    <div class="footer-bottom" style="margin: 0 auto; text-align: center; padding: 20px 0; width: fit-content;">
+    <p style="margin: 5px 0;">&copy; 2025 Yemeni Canadian Council (YCC). All rights reserved.</p>
+    <p style="margin: 5px 0;">Published: November 30, 2025 | Last Updated: <span id="currentDate"></span></p>
+    <p style="margin: 5px 0;">Designed, Developed, and Managed By: Omar Sabri</p>
+</div>    
+        
         </div>
     </footer>
 
@@ -1290,10 +1297,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-<script>
-    // Remove the entire switchLanguage function if you're using onclick
-    // Keep only setActiveLanguageButton:
-    
+
+    <script>
     function setActiveLanguageButton() {
         const isArabic = window.location.href.includes('/Arabic/');
         const buttons = document.querySelectorAll('.lang-switch-btn');
@@ -1310,13 +1315,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Make sure Arabic button also updates localStorage
     document.addEventListener('DOMContentLoaded', function() {
         setActiveLanguageButton();
+        
+        // Add click handler for Arabic button
+        document.querySelector('[data-lang="ar"]').addEventListener('click', function(e) {
+            localStorage.setItem('preferredLang', 'ar');
+        });
+        
+        // Add click handler for English button  
+        document.querySelector('[data-lang="en"]').addEventListener('click', function(e) {
+            localStorage.setItem('preferredLang', 'en');
+        });
     });
 </script>
-
-
-
 
 
     </body>
