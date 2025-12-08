@@ -171,6 +171,79 @@
         height: 50px !important;
         margin-right: 15px !important;
     }
+
+
+/* === LANGUAGE ROW - MATCH ENGLISH === */
+.language-row {
+    margin-top: 15px !important;
+    padding-top: 15px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+    width: 100% !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+.language-container {
+    display: inline-flex !important;
+    gap: 15px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+}
+
+/* Match English button styles */
+.lang-switch-btn {
+    padding: 6px 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    background: rgba(0, 0, 0, 0.2) !important;
+    color: white !important;
+    border-radius: 4px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    min-width: 60px !important;
+    min-height: 35px !important;
+    box-sizing: border-box !important;
+    font-family: 'Tajawal', sans-serif !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+}
+
+.lang-switch-btn:hover {
+    background: rgba(0, 0, 0, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
+    transform: translateY(-1px) !important;
+}
+
+.lang-switch-btn.active {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 600 !important;
+}
+
+.lang-icon {
+    font-weight: bold !important;
+    font-size: 14px !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .language-container {
+        gap: 10px !important;
+    }
+    
+    .lang-switch-btn {
+        padding: 5px 10px !important;
+        font-size: 13px !important;
+    }
+}
+
+
 </style>
 
 
@@ -231,20 +304,28 @@
             </div>
         </div>
 
-        <!-- NEW: Language Row Below Menu -->
+        <!-- Language Switcher - UNIFIED VERSION (KEEP THIS ONE) -->
         <div class="language-row">
             <div class="language-container">
-                <button class="lang-btn active" onclick="window.location.href='index.html'; localStorage.setItem('preferredLang', 'ar');">
+                <!-- Arabic Button -->
+                <button class="lang-switch-btn" 
+                        onclick="switchLanguage('ar')"
+                        data-lang="ar">
                     <span class="lang-icon">AR</span>
+                    <span class="lang-text">العربية</span>
                 </button>
-                <button class="lang-btn" onclick="window.location.href='../English/index.html'; localStorage.setItem('preferredLang', 'en');">
-                    <span class="lang-icon">En</span>
+                
+                <!-- English Button -->
+                <button class="lang-switch-btn" 
+                        onclick="switchLanguage('en')"
+                        data-lang="en">
+                    <span class="lang-icon">EN</span>
+                    <span class="lang-text">English</span>
                 </button>
             </div>
         </div>
     </div>
 </header>
-
 
 
 
@@ -466,7 +547,7 @@
                             <i class="fas fa-user-friends"></i>
                         </div>
                         <div class="stat-content">
-                            <div class="stat-number">+500</div>
+                            <div class="stat-number">+50</div>
                             <div class="stat-label">عضو</div>
                         </div>
                     </div>
@@ -475,7 +556,7 @@
                             <i class="fas fa-calendar-check"></i>
                         </div>
                         <div class="stat-content">
-                            <div class="stat-number">+50</div>
+                            <div class="stat-number">+10</div>
                             <div class="stat-label">فعالية</div>
                         </div>
                     </div>
@@ -484,7 +565,7 @@
                             <i class="fas fa-home"></i>
                         </div>
                         <div class="stat-content">
-                            <div class="stat-number">+100</div>
+                            <div class="stat-number">+30</div>
                             <div class="stat-label">أسرة</div>
                         </div>
                     </div>
